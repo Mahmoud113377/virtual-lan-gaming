@@ -1,5 +1,5 @@
 // Connect to the signaling server
-const socket = io('http://localhost:5500', {
+const socket = io('https://virtual-lan-gaming-production.up.railway.app', {
     reconnection: true,
     reconnectionAttempts: 5,
     reconnectionDelay: 1000
