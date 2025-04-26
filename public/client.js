@@ -42,6 +42,11 @@ function initPeer(targetId, isInitiator) {
     const peer = new SimplePeer({
         initiator: isInitiator,
         trickle: true,
+        config: {
+            iceServers: [
+                { urls: 'stun:stun.l.google.com:19302' },
+            ]
+        },
         sdpTransform: (sdp) => {
             console.log(`SDP created, type: ${isInitiator ? 'offer' : 'answer'}`);
             return sdp;
