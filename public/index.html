@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual LAN Gaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .connection-form {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #users-container {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        #game-list {
+            margin-top: 20px;
+        }
+        .game-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .game-item:hover {
+            background: #f0f0f0;
+        }
+        #network-stats {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Virtual LAN Gaming</h1>
+    
+    <div class="connection-form">
+        <h2>Join or Create Virtual LAN</h2>
+        <div>
+            <input type="text" id="username" placeholder="Your Username" required>
+        </div>
+        <div>
+            <input type="text" id="room-name" placeholder="Room Name" required>
+        </div>
+        <div>
+            <button id="create-btn">Create Room</button>
+            <button id="join-btn">Join Room</button>
+        </div>
+    </div>
+    
+    <div id="room-info" style="display: none;">
+        <h2>Connected to: <span id="current-room"></span></h2>
+        <p>Your Virtual IP: <span id="virtual-ip">Not assigned yet</span></p>
+        <button id="disconnect-btn">Disconnect</button>
+        
+        <div id="users-container">
+            <h3>Connected Users</h3>
+            <ul id="users-list"></ul>
+        </div>
+        
+        <div id="game-list">
+            <h3>Compatible Games</h3>
+            <div class="game-item" data-game="minecraft">Minecraft</div>
+            <div class="game-item" data-game="csgo">Counter-Strike</div>
+            <div class="game-item" data-game="age-of-empires">Age of Empires II</div>
+            <div class="game-item" data-game="diablo2">Diablo II</div>
+        </div>
+        
+        <div id="network-stats">
+            <h3>Network Statistics</h3>
+            <p>Connection Type: <span id="connection-type">-</span></p>
+            <p>Latency: <span id="latency">-</span></p>
+            <p>Packet Loss: <span id="packet-loss">-</span></p>
+        </div>
+    </div>
+
+    <!-- Replace this line -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    
+    <!-- With this line -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.11.1/simplepeer.min.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
